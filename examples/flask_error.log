@@ -1,0 +1,14 @@
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server.
+ * Running on http://127.0.0.1:5000
+
+[2024-03-15 14:32:01] ERROR in app: Exception on /api/users/42 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/myapp/routes/users.py", line 34, in get_user
+    return jsonify(users[user_id])
+IndexError: list index out of range

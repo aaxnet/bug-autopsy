@@ -1,0 +1,19 @@
+--- Application startup ---
+[INFO] Loading configuration from config.yaml
+[INFO] Connecting to database...
+
+Traceback (most recent call last):
+  File "/srv/api/main.py", line 47, in startup
+    db_url = config['database']['url']
+KeyError: 'url'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/srv/api/main.py", line 53, in startup
+    fallback_connect(config)
+  File "/srv/api/db.py", line 18, in fallback_connect
+    conn = sqlite3.connect(config['fallback_path'])
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+[ERROR] Application failed to start after 2 retries.
